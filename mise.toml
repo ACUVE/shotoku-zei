@@ -1,0 +1,10 @@
+[tools]
+node = "lts"
+pnpm = "latest"
+rust = "latest"
+"cargo:wasm-pack" = "latest"
+"cargo:cargo-watch" = "latest"
+
+[settings]
+experimental = true
+lockfile = true
