@@ -1,0 +1,19 @@
+[[tools."cargo:cargo-watch"]]
+version = "8.5.3"
+backend = "cargo:cargo-watch"
+
+[[tools."cargo:wasm-pack"]]
+version = "0.13.1"
+backend = "cargo:wasm-pack"
+
+[[tools.node]]
+version = "24.11.1"
+backend = "core:node"
+
+[[tools.pnpm]]
+version = "10.24.0"
+backend = "aqua:pnpm/pnpm"
+
+[[tools.rust]]
+version = "1.91.1"
+backend = "core:rust"
