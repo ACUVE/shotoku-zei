@@ -7,10 +7,10 @@
 	"main": "pkg/shotoku_zei_wasm.js",
 	"types": "pkg/shotoku_zei_wasm.d.ts",
 	"scripts": {
-		"dev": "cd ../.. && cargo watch -i 'packages/wasm/pkg/*' -s 'wasm-pack build --target bundler --out-dir packages/wasm/pkg crates/shotoku-zei-wasm'",
-		"build": "cd ../.. && wasm-pack build --target bundler --out-dir packages/wasm/pkg crates/shotoku-zei-wasm",
-		"build:node": "cd ../.. && wasm-pack build --target nodejs --out-dir packages/wasm/pkg-node crates/shotoku-zei-wasm",
-		"build:web": "cd ../.. && wasm-pack build --target web --out-dir packages/wasm/pkg crates/shotoku-zei-wasm",
+		"dev": "cd ../.. && cargo watch -w crates/shotoku-zei/src -w crates/shotoku-zei-wasm/src -s 'wasm-pack build --target bundler crates/shotoku-zei-wasm && rsync -a --delete crates/shotoku-zei-wasm/pkg/ packages/wasm/pkg/'",
+		"build": "wasm-pack build --target bundler --out-dir pkg ../../crates/shotoku-zei-wasm",
+		"build:node": "wasm-pack build --target nodejs --out-dir pkg-node ../../crates/shotoku-zei-wasm",
+		"build:web": "wasm-pack build --target web --out-dir pkg ../../crates/shotoku-zei-wasm",
 		"lint": "echo 'Rust project - no lint needed'",
 		"test": "cargo test"
 	}

@@ -2,7 +2,6 @@
 
 # Rust / Cargo
 target/
-Cargo.lock
 
 # https://github.com/github/gitignore/blob/86922aee426c32ffb6098f9a38c42da75169501e/Node.gitignore
 # Logs
