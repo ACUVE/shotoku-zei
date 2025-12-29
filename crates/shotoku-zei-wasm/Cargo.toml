@@ -1,0 +1,18 @@
+[package]
+name = "shotoku-zei-wasm"
+description = "WebAssembly bindings for shotoku-zei"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+shotoku-zei = { path = "../shotoku-zei" }
+wasm-bindgen = "0.2"
+
+[dependencies.web-sys]
+version = "0.3"
+features = ["console"]

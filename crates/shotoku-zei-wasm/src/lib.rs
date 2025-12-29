@@ -13,7 +13,7 @@ pub fn greet(name: &str) -> String {
 
 #[wasm_bindgen]
 pub fn calculate_tax(income: f64, rate: f64) -> f64 {
-    income * rate
+    shotoku_zei::calculate_simple_tax(income, rate)
 }
 
 #[wasm_bindgen]
@@ -37,7 +37,7 @@ impl TaxCalculator {
     /// # Arguments
     /// * `income` - 課税対象所得（円）
     pub fn calculate(&self, income: f64) -> f64 {
-        income * self.base_rate
+        shotoku_zei::calculate_simple_tax(income, self.base_rate)
     }
 
     /// 累進課税による所得税の簡易計算
@@ -53,17 +53,6 @@ impl TaxCalculator {
     /// # Returns
     /// 計算された所得税額（円）
     pub fn calculate_progressive(&self, income: f64) -> f64 {
-        // 2024年時点の所得税率に基づく累進課税の簡易計算
-        if income <= 1_950_000.0 {
-            income * 0.05
-        } else if income <= 3_300_000.0 {
-            97_500.0 + (income - 1_950_000.0) * 0.10
-        } else if income <= 6_950_000.0 {
-            232_500.0 + (income - 3_300_000.0) * 0.20
-        } else if income <= 9_000_000.0 {
-            962_500.0 + (income - 6_950_000.0) * 0.23
-        } else {
-            1_434_000.0 + (income - 9_000_000.0) * 0.33
-        }
+        shotoku_zei::calculate_progressive_tax(income)
     }
 }
