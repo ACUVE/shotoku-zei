@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/shotoku-zei",
+    "crates/shotoku-zei-wasm",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/ACUVE/shotoku-zei"
+license = "AGPL-3.0"
+
+[profile.release]
+opt-level = "s"
+lto = true

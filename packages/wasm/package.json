@@ -7,10 +7,11 @@
 	"main": "pkg/shotoku_zei_wasm.js",
 	"types": "pkg/shotoku_zei_wasm.d.ts",
 	"scripts": {
-		"dev": "cargo watch -i 'pkg/*' -s 'wasm-pack build --target bundler --out-dir pkg'",
-		"build": "wasm-pack build --target bundler --out-dir pkg",
-		"build:node": "wasm-pack build --target nodejs --out-dir pkg-node",
-		"build:web": "wasm-pack build --target web --out-dir pkg",
-		"lint": "echo 'Rust project - no lint needed'"
+		"dev": "cd ../.. && cargo watch -i 'packages/wasm/pkg/*' -s 'wasm-pack build --target bundler --out-dir packages/wasm/pkg crates/shotoku-zei-wasm'",
+		"build": "wasm-pack build --target bundler --out-dir pkg ../../crates/shotoku-zei-wasm",
+		"build:node": "wasm-pack build --target nodejs --out-dir pkg-node ../../crates/shotoku-zei-wasm",
+		"build:web": "wasm-pack build --target web --out-dir pkg ../../crates/shotoku-zei-wasm",
+		"lint": "echo 'Rust project - no lint needed'",
+		"test": "cargo test"
 	}
 }
