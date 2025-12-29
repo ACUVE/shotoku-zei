@@ -1,0 +1,30 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+catalog:
+  # React ecosystem
+  react: ^18.2.0
+  react-dom: ^18.2.0
+  "@types/react": ^18.2.45
+  "@types/react-dom": ^18.2.18
+
+  # TanStack Router
+  "@tanstack/react-router": ^1.141.8
+  "@tanstack/router-devtools": ^1.141.8
+  "@tanstack/router-vite-plugin": ^1.142.0
+
+  # Build tools
+  vite: ^5.0.10
+  "@vitejs/plugin-react": ^4.2.1
+  vite-plugin-wasm: ^3.5.0
+  vite-plugin-top-level-await: ^1.6.0
+
+  # TypeScript
+  typescript: ^5.3.3
+
+  # Linting & Formatting
+  prettier: ^3.1.1
+
+  # Monorepo tools
+  turbo: ^1.11.2
